@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>หน้าแรก</h1>
+<h1 class="text-2xl font-semibold mb-2">หน้าแรก</h1>
 {% if user.is_authenticated %}
-    <p>ยินดีต้อนรับ, {{ user.username }}!</p>
+    <p class="text-lg text-gray-700 mb-4">ยินดีต้อนรับ, {{ user.username }}!</p>
+    <span class="me-3">สะวักดีทุกคน {{user.first_name}}</span>
     <a href="{% url 'profile_edit' %}" class="btn btn-primary">แก้ไขโปรไฟล์</a>
 {% else %}
-    <p>ยินดีต้อนรับสู่หน้าแรกของเว็บไซต์!</p>
+    <p class="text-2xl font-semibold mb-2">ยินดีต้อนรับสู่หน้าแรกของเว็บไซต์!</p>
 {% endif %}
 {% endblock %}

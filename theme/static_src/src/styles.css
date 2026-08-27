@@ -10,7 +10,16 @@
 @source "../../../**/*.{html,py,js}";
 
 @layer components {
-  .btn-primary {
-    @apply px-4 py-2 rounded-md bg-blue-600 text-sm font-medium hover:bg-blue-700 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 ease-in-out;
+  .btn-wanarase {
+    @apply px-4 py-2 rounded-md bg-blue-600 text-sm font-medium text-white hover:bg-blue-700 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 ease-in-out;
   }
+
+  .btn-sudlhor {
+    @apply px-4 py-2 rounded-md bg-green-500 text-sm font-medium text-white hover:bg-green-600 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 ease-in-out;
+  }
+
+}
+
+@theme {
+  --font-sans: "Charmonman", cursive, ui-sans-serif, system-ui, sans-serif;
 }

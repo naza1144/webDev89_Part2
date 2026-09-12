@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body class="bg-gray-50 min-h-screen flex flex-col font-sans">
@@ -22,6 +23,10 @@
                 <a href="{% url 'tailwind_showcase' %}"
                     class="text-sm text-gray-200 bg-violet-400 rounded-md py-1.5 px-3 hover:text-violet-700 transition">component
                     learning</a>
+
+                <a href="{% url 'alpine_showcase' %}"
+                    class="text-sm text-gray-200 bg-amber-400 rounded-md py-1.5 px-3 hover:text-amber-700 transition">Alpine
+                    JS Learning</a>
                 <form method="post" class="d-inline" action="{% url 'logout' %}">
                     {% csrf_token %}
                     <button

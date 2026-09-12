@@ -8,7 +8,7 @@
     <br>
     <section class="space-y-2">
         <h2 class="text-2xl font-semibold">Typography</h2>
-        <p class="text-gray-500 text-sm">การจัดการรูปแบบข้อความ</p>
+        <p class="text-gray-800 text-sm">การจัดการรูปแบบข้อความ</p>
         <div class="bg-white border border-gray-300 rounded-lg shadow-md p-5 space-y-3">
             <h1 class="text-3xl font-extrabold">Heading - หัวเรื่อง</h1>
             <h2 class="text-2xl font-bold">Subheading - หัวเรื่องย่อย</h2>
@@ -22,7 +22,7 @@
     <hr class="my-4">
     <section>
         <h2 class="text-2xl font-semibold">Button</h2>
-        <p class="text-gray-500 text-sm">การจัดการรูปแบบปุ่ม</p>
+        <p class="text-gray-800 text-sm">การจัดการรูปแบบปุ่ม</p>
         <div class="bg-white border border-gray-300 rounded-lg shadow-md p-5 space-y-3">
             <button class="py-2 px-4 bg-blue-700 rounded-xl">Primary</button>
             <button class="py-2 px-4 bg-gray-700 rounded-lg">Dary</button>
@@ -37,7 +37,7 @@
     <hr class="my-4">
     <section>
         <h2 class="text-2xl font-semibold">Layout - Flex/Flexbox</h2>
-        <p class="text-gray-500 text-sm">การจัดการ components ด้วย Flexbox ไม่ว่าจะเป็น row หรือ column</p>
+        <p class="text-gray-800 text-sm">การจัดการ components ด้วย Flexbox ไม่ว่าจะเป็น row หรือ column</p>
         <div class="bg-white border border-gray-300 rounded-lg shadow-md p-5 space-y-3">
             <div class="flex gap-3 bg-gray-100 p-2 rounded-md text-center">
                 <div class="bg-blue-600 text-white text-sm p-3 rounded-md">1</div>
@@ -51,66 +51,186 @@
             </div>
 
             <div class="space-y-2">
-                <p class="my-4 text-sm text-gray-500">จัดตำแหน่งตาม main axis</p>
-                <p class="my-4 text-sm text-gray-500">justify - start</p>
+                <p class="my-4 text-sm text-gray-800">จัดตำแหน่งตาม main axis แกน x</p>
+                <hr class="my-2 text-gray-300">
+                <p class="my-4 text-sm text-gray-800">justify - start</p>
                 <div class="flex justify-start gap-2 bg-gray-100 p-1">
-                    <div class="bg-red-600 text-white text-sm p-3 rounded-md">1</div>
-                    <div class="bg-red-600 text-white text-sm p-3 rounded-md">2</div>
-                    <div class="bg-red-600 text-white text-sm p-3 rounded-md">3</div>
+                    <div class="bg-violet-600 text-white text-sm p-3 rounded-md">1</div>
+                    <div class="bg-violet-500 text-white text-sm p-3 rounded-md">2</div>
+                    <div class="bg-violet-600 text-white text-sm p-3 rounded-md">3</div>
                 </div>
-                <p class="my-4 text-sm text-gray-500">justify - center </p>
+
+                <p class="my-4 text-sm text-gray-800">justify - center</p>
                 <div class="flex justify-center gap-2 bg-gray-100 p-1">
-                    <div class="bg-yellow-300 text-white text-sm p-3 rounded-md">1</div>
-                    <div class="bg-yellow-300 text-white text-sm p-3 rounded-md">2</div>
-                    <div class="bg-yellow-300 text-white text-sm p-3 rounded-md">3</div>
+                    <div class="bg-emerald-600 text-white text-sm p-3 rounded-md">1</div>
+                    <div class="bg-emerald-500 text-white text-sm p-3 rounded-md">2</div>
+                    <div class="bg-emerald-600 text-white text-sm p-3 rounded-md">3</div>
                 </div>
-                <p class="my-4 text-sm text-gray-500">justify - end </p>
+
+                <p class="my-4 text-sm text-gray-800">justify - end</p>
                 <div class="flex justify-end gap-2 bg-gray-100 p-1">
-                    <div class="bg-green-600 text-white text-sm p-3 rounded-md">1</div>
-                    <div class="bg-green-600 text-white text-sm p-3 rounded-md">2</div>
-                    <div class="bg-green-600 text-white text-sm p-3 rounded-md">3</div>
+                    <div class="bg-orange-600 text-white text-sm p-3 rounded-md">1</div>
+                    <div class="bg-orange-500 text-white text-sm p-3 rounded-md">2</div>
+                    <div class="bg-orange-600 text-white text-sm p-3 rounded-md">3</div>
                 </div>
-                <p class="my-4 text-sm text-gray-500">justify - between </p>
+
+                <p class="my-4 text-sm text-gray-800">justify - between</p>
                 <div class="flex justify-between gap-2 bg-gray-100 p-1">
-                    <div class="bg-violet-300 text-white text-sm p-3 rounded-md">1</div>
-                    <div class="bg-violet-300 text-white text-sm p-3 rounded-md">2</div>
-                    <div class="bg-violet-300 text-white text-sm p-3 rounded-md">3</div>
+                    <div class="bg-black text-white text-sm p-3 rounded-md">1</div>
+                    <!-- <div class="bg-black text-white text-sm p-3 rounded-md">2</div> -->
+                    <div class="bg-black text-white text-sm p-3 rounded-md">3</div>
                 </div>
             </div>
             <div class="space-y-2">
-                <p class="my-4 text-sm text-gray-500">จัดตำแหน่งตาม cross axis</p>
-                <p class="my-4 text-sm text-gray-500">items-start</p>
-                <div class="flex items-start gap-2 bg-gray-100 p-2 h-20">
-                    <div class="bg-rose-600 rounded text-white p-3 w-10 h-10">A</div>
-                    <div class="bg-rose-600 rounded text-white p-3 w-10 h-10">B</div>
-                    <div class="bg-rose-600 rounded text-white p-3 w-10 h-10">C</div>
+                <p class="my-4 text-sm text-gray-800">จัดตำแหน่งตาม main axis แกน y</p>
+                <hr class="my-2 text-gray-300">
+                <p class="my-4 text-sm text-gray-800">items - start</p>
+                <div class="flex items-start gap-2 bg-gray-100 px-3 py-1.5 h-20">
+                    <div class="bg-amber-600 text-white text-sm p-3 rounded-md">1</div>
+                    <div class="bg-amber-500 text-white text-sm p-3 rounded-md">2</div>
+                    <div class="bg-amber-600 text-white text-sm p-3 rounded-md">3</div>
+                </div>
+                <p class="my-4 text-sm text-gray-800">items - center</p>
+                <div class="flex items-center gap-2 bg-gray-100 px-3 py-1.5 h-20">
+                    <div class="bg-rose-600 text-white text-sm p-3 rounded-md">1</div>
+                    <div class="bg-rose-500 text-white text-sm p-3 rounded-md">2</div>
+                    <div class="bg-rose-600 text-white text-sm p-3 rounded-md">3</div>
+                </div>
+                <div class="space-y-2">
+                    <p class="my-4 text-sm text-gray-800"> รวมร่าง</p>
+                    <div class="flex space-x-4">
+                        <div class="w-60">
+                            <p class="my-4 text-xs text-gray-800"> items-start justify-center</p>
+                            <div class="flex items-start justify-center gap-2 bg-gray-100 p-2 h-30">
+                                <div class="bg-yellow-400 rounded text-white text-sm py-1.5 px-3">A</div>
+                            </div>
+                        </div>
+                        <div class="w-60">
+                            <p class="my-4 text-xs text-gray-800"> items-start justify-start</p>
+                            <div class="flex items-start justify-start gap-2 bg-gray-100 p-2 h-30">
+                                <div class="bg-yellow-400 rounded text-white text-sm py-1.5 px-3">B</div>
+                            </div>
+                        </div>
+                        <div class="w-60">
+                            <p class="my-4 text-xs text-gray-800"> items-start justify-end</p>
+                            <div class="flex items-start justify-end gap-2 bg-gray-100 p-2 h-30">
+                                <div class="bg-yellow-400 rounded text-white text-sm py-1.5 px-3">C</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <div class="w-60">
+                            <p class="my-4 text-xs text-gray-800"> items-center justify-center</p>
+                            <div class="flex items-center justify-center gap-2 bg-gray-100 p-2 h-30">
+                                <div class="bg-yellow-400 rounded text-white text-sm py-1.5 px-3">A</div>
+                            </div>
+                        </div>
+                        <div class="w-60">
+                            <p class="my-4 text-xs text-gray-800"> items-center justify-start</p>
+                            <div class="flex items-center justify-start gap-2 bg-gray-100 p-2 h-30">
+                                <div class="bg-yellow-400 rounded text-white text-sm py-1.5 px-3">B</div>
+                            </div>
+                        </div>
+                        <div class="w-60">
+                            <p class="my-4 text-xs text-gray-800"> items-center justify-end</p>
+                            <div class="flex items-center justify-end gap-2 bg-gray-100 p-2 h-30">
+                                <div class="bg-yellow-400 rounded text-white text-sm py-1.5 px-3">C</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <div class="w-60">
+                            <p class="my-4 text-xs text-gray-800"> items-end justify-center</p>
+                            <div class="flex items-end justify-center gap-2 bg-gray-100 p-2 h-30">
+                                <div class="bg-yellow-400 rounded text-white text-sm py-1.5 px-3">A</div>
+                            </div>
+                        </div>
+                        <div class="w-60">
+                            <p class="my-4 text-xs text-gray-800"> items-end justify-start</p>
+                            <div class="flex items-end justify-start gap-2 bg-gray-100 p-2 h-30">
+                                <div class="bg-yellow-400 rounded text-white text-sm py-1.5 px-3">B</div>
+                            </div>
+                        </div>
+                        <div class="w-60">
+                            <p class="my-4 text-xs text-gray-800"> items-end justify-end</p>
+                            <div class="flex items-end justify-end gap-2 bg-gray-100 p-2 h-30">
+                                <div class="bg-yellow-400 rounded text-white text-sm py-1.5 px-3">C</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="space-y-2">
-                <p class="my-4 text-sm text-gray-500">items-center</p>
-                <div class="flex items-center gap-2 bg-gray-100 p-2 h-20">
-                    <div class="bg-sky-600 rounded text-white p-3 w-10 h-10">A</div>
-                    <div class="bg-sky-600 rounded text-white p-3 w-10 h-10">B</div>
-                    <div class="bg-sky-600 rounded text-white p-3 w-10 h-10">C</div>
-                </div>
-            </div>
-            <div class="space-y-2">
-                <p class="my-4 text-sm text-gray-500">items-end</p>
-                <div class="flex items-end gap-2 bg-gray-100 p-2 h-20">
-                    <div class="bg-olive-600 rounded text-white p-3 w-10 h-10">A</div>
-                    <div class="bg-olive-600 rounded text-white p-3 w-10 h-10">B</div>
-                    <div class="bg-olive-600 rounded text-white p-3 w-10 h-10">C</div>
-                </div>
-            </div>
-    </section>
-    <hr class="my-4">
-    <section>
-        <h2 class="text-2xl font-semibold">Padding</h2>
-        <p class="text-gray-500 text-sm">ระยะห่างจากขอบ "เข้าไปด้านในกล่อง"</p>
-        <div class="bg-white border border-gray-300 rounded-lg shadow-md p-5 space-y-3">
-
-
         </div>
-    </section>
+
+</div>
+</section>
+<hr class="my-4">
+<section>
+    <h2 class="text-2xl font-semibold">Padding</h2>
+    <p class="text-gray-800 text-sm">ระยะห่างจากขอบ "เข้าไปด้านในกล่อง"</p>
+    <div class="bg-white border border-gray-300 rounded-lg shadow-md p-5 space-y-3">
+        <div class="text-center">
+            <div class="bg-blue-200 border-2 border-dashed border-blue-500 inline-block">
+                <div class="bg-blue-500 text-md text-white p-1">
+                    <p>P-1</p>
+                </div>
+            </div>
+            <p class="text-gray-600 text-sm mt-2">0.25 rem</p>
+        </div>
+        <div class="text-center">
+            <div class="bg-blue-200 border-2 border-dashed border-blue-500 inline-block">
+                <div class="bg-blue-500 text-md text-white p-2">
+                    <p>P-2</p>
+                </div>
+            </div>
+            <p class="text-gray-600 text-sm mt-2">0.50 rem</p>
+        </div>
+        <div class="text-center">
+            <div class="bg-blue-200 border-2 border-dashed border-blue-500 inline-block">
+                <div class="bg-blue-500 text-md text-white p-3">
+                    <p>P-3</p>
+                </div>
+            </div>
+            <p class="text-gray-600 text-sm mt-2">0.75 rem</p>
+        </div>
+        <div class="text-center">
+            <div class="bg-blue-200 border-2 border-dashed border-blue-500 inline-block">
+                <div class="bg-blue-500 text-md text-white p-4">
+                    <p>P-4</p>
+                </div>
+            </div>
+            <p class="text-gray-600 text-sm mt-2">1 rem</p>
+        </div>
+    </div>
+    <p class="text-gray-800 text-sm">ระยะห่างจากขอบ "เข้าไปด้านในกล่อง"</p>
+    <div class="bg-white border border-gray-300 rounded-lg shadow-md p-5 space-y-3">
+        <div class="flex flex-col text-center">
+            <div class="text-center">
+                <div class="bg-violet-200 border-2 border-dashed border-blue-500 inline-block">
+                    <div class="bg-violet-500 text-md text-white py-4 px-8"> py-4 px-8</div>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="bg-violet-200 border-2 border-dashed border-blue-500 inline-block">
+                    <div class="bg-violet-500 text-md text-white py-4 px-16"> py-4 px-16</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section>
+    <h2 class="text-2xl font-semibold">Margin</h2>
+    <p class="text-gray-800 text-sm">ระยะห่างจากขอบกัยด้านนอก และดันกล่องข้างๆ ออกไป</p>
+    <div class="bg-white border border-gray-300 rounded-lg shadow-md p-5 space-y-3">
+        <p class="text-gray-600 text-sm mb-2">เทียบกันระหว่าง m-1,m-4, m-8</p>
+        <div class="bg-gray-100">
+            <div class="bg-green-600 text-white text-xs p-2 m-1">mb-1</div>
+            <div class="bg-green-600 text-white text-xs p-2 m-2">mb-2</div>
+            <div class="bg-green-600 text-white text-xs p-2 m-3">mb-3</div>
+            <div class="bg-green-600 text-white text-xs p-2 m-4">mb-4</div>
+        </div>
+    </div>
+</section>
 </div>
 {% endblock %}

@@ -9,7 +9,12 @@ from .forms import ProfileForm, RegistrationForm
 from .models import Profile
 # Create your views here.
 def home_view(request):
-    return render(request, 'accounts/home.html')
+    context = {}
+    if request.user.is_authenticated:
+        #ดึงโปรไฟล์
+        context['profile'] = Profile.objects.filter(user=request.user).first()
+        context['avatar_url'] = context['profile'].avatar.url if context['profile'].avatar else ''
+    return render(request, 'accounts/home.html', context)
 
 
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):

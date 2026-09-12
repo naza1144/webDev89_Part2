@@ -1,13 +1,25 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-5">
-        <h2>Login</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-sudlhor">Login</button>
-        </form>
+<div class="flex justify-center">
+    <div class="w-full max-w-sm">
+        <div class="bg-white rounded-lg border border-gray-300 shadow-sm p-8">
+            <div class="card-body">
+                <h1 class="text-xl font-semibold mb-4">เข้าสู่ระบบ</h1>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="block font-md">Username :</label>
+                        <input type="text" name="username" class="border border-gray-100 rounded-mg focus:ring-blue-500 focus:border-blue-500 px-3 py-1 text-sm font-semibold">
+                    </div>
+                    <div class="mb-3">
+                        <label class="block font-md">Password :</label>
+                        <input type="password" name="password" class="border border-gray-100 rounded-mg focus:ring-blue-500 focus:border-blue-500 px-3 py-1 text-sm font-semibold">
+                    </div>
+                    <button class="btn-sudlhor" type="submit"> เข้าสู่ระบบ </button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

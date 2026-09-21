@@ -12,8 +12,9 @@ def home_view(request):
     context = {}
     if request.user.is_authenticated:
         #ดึงโปรไฟล์
-        context['profile'] = Profile.objects.filter(user=request.user).first()
-        context['avatar_url'] = context['profile'].avatar.url if context['profile'].avatar else ''
+        profile, _ = Profile.objects.get_or_create(user=request.user)
+        context['profile'] = profile
+        context['avatar_url'] = profile.avatar.url if profile.avatar else ''
     return render(request, 'accounts/home.html', context)
 
 
@@ -24,7 +25,8 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('home')
 
     def get_object(self):
-        return self.request.user.profile
+        profile, _ = Profile.objects.get_or_create(user=self.request.user)
+        return profile
 
 
 class RegisterView(CreateView):

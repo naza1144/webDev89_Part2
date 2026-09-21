@@ -1,0 +1,17 @@
+<li id="item-{{ item.id }}"
+    class="flex items-center justify-between px-4 py-2 border-b border-gray-100 last:border-0">
+    <span class="text-sm cursor-pointer hover:text-blue-600" 
+        hx-get="{% url 'htmx_showcase_edit' item.id %}"
+        hx-target="#item-{{ item.id }}" 
+        hx-swap="outerHTML">
+        {{ item.title }}
+    </span>
+
+    <button hx-delete="{% url 'htmx_showcase_delete' item.id %}" 
+        hx-target="#item-{{ item.id }}"
+        hx-swap="outerHTML swap:1s" 
+        hx-confirm="ลบ '{{ item.title }}' ใช่ไหม?"
+        class="text-red-600 text-sm hover:underline cursor-pointer">
+        ลบ
+    </button>
+</li>

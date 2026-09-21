@@ -1,0 +1,23 @@
+<li class="px-4 py-3 flex items-center justify-between hover:bg-gray-50 transition" id="item-{{ item.pk }}">
+    <div class="flex items-center gap-3">
+        <span class="text-sm font-medium text-gray-800">{{ item.title }}</span>
+        <span class="text-xs text-gray-400 font-mono">{{ item.create_at|date:"d/m/Y H:i" }}</span>
+    </div>
+    <div class="flex items-center gap-2">
+        <button 
+            hx-get="{% url 'htmx_showcase_edit' item.pk %}"
+            hx-target="closest li"
+            hx-swap="outerHTML"
+            class="text-xs px-2.5 py-1 bg-amber-50 text-amber-700 hover:bg-amber-100 rounded border border-amber-200 transition cursor-pointer">
+            แก้ไข
+        </button>
+        <button 
+            hx-post="{% url 'htmx_showcase_delete' item.pk %}"
+            hx-target="closest li"
+            hx-swap="outerHTML"
+            hx-confirm="คุณแน่ใจหรือไม่ว่าต้องการลบรายการ '{{ item.title }}'?"
+            class="text-xs px-2.5 py-1 bg-red-50 text-red-700 hover:bg-red-100 rounded border border-red-200 transition cursor-pointer">
+            ลบ
+        </button>
+    </div>
+</li>

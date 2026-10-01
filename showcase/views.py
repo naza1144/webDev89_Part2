@@ -50,3 +50,12 @@ def htmx_item_delete_view(request, pk):
         item_delete.delete()
         return HttpResponse('')
     return HttpResponse('Method Not Allowed', status=405)
+
+def demo_search_view(request):
+    req = request.GET
+    search = req.get("name", '').strip()
+    if search == '':
+        items = DemoItem.objects.all()
+    else:
+        items = DemoItem.objects.filter(title__icontains=search)
+    return render(request, 'showcases/partials/demo_item_row_s.html', {"items": items})

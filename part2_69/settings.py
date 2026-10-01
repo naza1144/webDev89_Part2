@@ -59,6 +59,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'part2_69.urls'
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

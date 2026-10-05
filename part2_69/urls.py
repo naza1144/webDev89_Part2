@@ -27,6 +27,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
     path('showcases/', include('showcase.urls')),
+    path('tasks/', include('tasks.urls')),
 ]
 
 if settings.DEBUG:

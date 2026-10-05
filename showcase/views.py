@@ -53,9 +53,10 @@ def htmx_item_delete_view(request, pk):
 
 def demo_search_view(request):
     req = request.GET
-    search = req.get("name", '').strip()
-    if search == '':
-        items = DemoItem.objects.all()
-    else:
-        items = DemoItem.objects.filter(title__icontains=search)
-    return render(request, 'showcases/partials/demo_item_row_s.html', {"items": items})
+    search = req.get("search", "").strip()
+    print(search)
+    items = DemoItem.objects.filter(title__icontains=search)
+    if search == "":
+        return render(request, "showcases/partials/demo_item_row_s.html", {"demo_items": DemoItem.objects.all()})
+
+    return render(request, "showcases/partials/demo_item_row_s.html", {"demo_items": items})

@@ -36,6 +36,9 @@
                 <a href="{% url 'htmx_showcase' %}"
                     class="text-sm text-teal-200 bg-teal-400 rounded-md py-1.5 px-3 hover:text-teal-700 transition">
                     htmx Learning</a>
+                <a href="{% url 'task_list' %}"
+                    class="text-sm text-white bg-blue-600 rounded-md py-1.5 px-3 hover:bg-blue-700 transition">
+                    Tasks</a>
                 <form method="post" class="d-inline" action="{% url 'logout' %}">
                     {% csrf_token %}
                     <button

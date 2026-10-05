@@ -1,0 +1,5 @@
+<!-- templates/tasks/partials/task_list_content.html (ไฟล์ใหม่) -->
+<!-- wrapper ถาวร ใช้ครั้งเดียวตอน render หน้าแรกผ่าน include ธรรมดา ไม่ใช่ response ของ HTMX -->
+<ul id="task-list" class="divide-y divide-gray-100">
+  {% include "tasks/partials/task_page_rows.html" %}
+</ul>

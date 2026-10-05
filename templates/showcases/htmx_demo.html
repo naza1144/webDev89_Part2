@@ -13,7 +13,7 @@
         </div>
         <!-- List -->
         <div class="bg-white rounded-lg border border-gray-2 mt-1">
-            <input type="text" name="name" placeholder="ค้นหา" 
+            <input type="text" name="search" placeholder="ค้นหา" 
             hx-get="{% url 'demo_search_view' %}"
             hx-trigger="keyup changed delay:200ms"
             hx-target="#demo-search-list"
@@ -23,7 +23,7 @@
             <span id="search-spinner" class="htmx-indicator absolute right-3 text-gray-500 text-xs  ">กำลังค้นหา...</span>
 
         </div>
-        {% include "showcases/partials/demo_item_list.html" with items=demo_items %}
+        {% include "showcases/partials/demo_item_list.html" with demo_items=demo_items %}
     </section>
 
     <div x-show="showModal" x-cloak @keydown.escape.window="showModal = false"

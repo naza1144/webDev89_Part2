@@ -1,0 +1,22 @@
+<!-- templates/tasks/partials/task_row.html -->
+<li id="task-{{ task.id }}" class="flex items-center gap-3 px-4 py-3 border-b border-gray-100 last:border-0">
+    <input type="checkbox" {% if task.done %}checked{% endif %}
+         hx-patch="{% url 'task_toggle' task.id %}"
+         hx-target="#task-{{ task.id }}"
+         hx-swap="outerHTML"
+         class="rounded border-gray-300">
+  <span class="flex-1 text-sm cursor-pointer {% if task.done %}line-through text-gray-400{% else %}text-gray-700 hover:text-blue-600{% endif %}"
+        hx-get="{% url 'task_edit_form' task.id %}"
+        hx-target="#task-{{ task.id }}"
+        hx-swap="outerHTML">
+    {{ task.title }}
+  </span>
+  
+  <button hx-delete="{% url 'task_delete' task.id %}"
+          hx-target="#task-{{ task.id }}"
+          hx-swap="outerHTML swap:1s"
+          hx-confirm="ลบงาน '{{ task.title }}' ใช่ไหม?"
+          class="text-red-600 text-xs hover:underline">
+    ลบ
+  </button>
+</li>

@@ -1,0 +1,70 @@
+<!-- templates/tasks/task_list.html-->
+{% extends "base.html" %}
+{% block title %}Tasks{% endblock %}
+{% block content %}
+<div class="py-6" x-data="{ showModal: false }">
+
+  <div class="border-b border-gray-200 pb-4 mb-6 flex items-center justify-between">
+    <div>
+      <h1 class="text-2xl font-bold">Task Manager</h1>
+      <p class="text-gray-500 text-sm mt-1">งานของ {{ user.username }} เท่านั้น — Auth + Tailwind + Alpine + HTMX รวมกันในหน้าเดียว</p>
+    </div>
+    
+    <button @click="showModal = true" class="btn-primary">+ เพิ่มงาน</button>
+  </div>
+
+ 
+  <div class="flex border-b border-gray-200 mb-4" x-data="{ tab: 'all' }">
+    <button hx-get="{% url 'task_filter' %}?status=all" hx-target="#task-list" hx-swap="innerHTML"
+            @click="tab = 'all'"
+            :class="tab === 'all' ? 'border-blue-600 text-blue-600' : 'border-transparent text-gray-500'"
+            class="px-4 py-2 text-sm border-b-2 -mb-px transition">ทั้งหมด</button>
+    <button hx-get="{% url 'task_filter' %}?status=pending" hx-target="#task-list" hx-swap="innerHTML"
+            @click="tab = 'pending'"
+            :class="tab === 'pending' ? 'border-blue-600 text-blue-600' : 'border-transparent text-gray-500'"
+            class="px-4 py-2 text-sm border-b-2 -mb-px transition">ยังไม่เสร็จ</button>
+    <button hx-get="{% url 'task_filter' %}?status=done" hx-target="#task-list" hx-swap="innerHTML"
+            @click="tab = 'done'"
+            :class="tab === 'done' ? 'border-blue-600 text-blue-600' : 'border-transparent text-gray-500'"
+            class="px-4 py-2 text-sm border-b-2 -mb-px transition">เสร็จแล้ว</button>
+  </div>
+
+ 
+  <div class="relative mb-4">
+    <input type="text" name="q" placeholder="ค้นหางาน..."
+           hx-get="{% url 'task_filter' %}"
+           hx-trigger="keyup changed delay:300ms"
+           hx-target="#task-list"
+           hx-swap="innerHTML"
+           hx-indicator="#search-spinner"
+           class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <span id="search-spinner" class="htmx-indicator absolute right-3 top-2.5 text-xs text-gray-400">กำลังค้นหา...</span>
+  </div>
+
+  <div class="bg-white rounded-lg border border-gray-200">
+    {% include "tasks/partials/task_list_content.html" %}
+  </div>
+
+  
+  <div x-show="showModal" x-cloak @keydown.escape.window="showModal = false"
+       class="fixed inset-0 bg-black/50 flex items-center justify-center z-20">
+    <div x-show="showModal" x-transition @click.outside="showModal = false"
+         class="bg-white rounded-xl p-6 w-full max-w-sm">
+      <h3 class="font-semibold mb-3">เพิ่มงานใหม่</h3>
+     
+      <form hx-post="{% url 'task_add' %}"
+            hx-target="#task-list"
+            hx-swap="innerHTML"
+            @htmx:after-request="showModal = false; $el.reset()">
+        <input type="text" name="title" placeholder="ชื่องาน..." autofocus
+               class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <div class="flex justify-end gap-2">
+          <button type="button" @click="showModal = false" class="px-3 py-1.5 rounded-md border border-gray-300 text-sm hover:bg-gray-100">ยกเลิก</button>
+          <button type="submit" class="px-3 py-1.5 rounded-md bg-blue-600 text-white text-sm hover:bg-blue-700">เพิ่ม</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
